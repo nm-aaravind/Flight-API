@@ -1,0 +1,14 @@
+API_Gateway/node_modules/
+Auth_Service/node_modules/
+Auth_Service/.env
+Auth_Service/src/config/config.json
+Flight_Booking_Service/node_modules/
+Flight_Booking_Service/.env
+Flight_Booking_Service/src/config/config.json
+Flight-Search-Service/node_modules/
+Flight-Search-Service/.env
+Flight-Search-Service/src/config/config.json
+Reminder_Service/node_modules/
+Reminder_Service/src/config/config.json
+Reminder_Service/.env
+Reminder_Service/trial.js

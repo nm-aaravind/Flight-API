@@ -1,0 +1,52 @@
+'use strict';
+
+const { DataTypes } = require('sequelize');
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Bookings', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      flightId: {
+        type: Sequelize.INTEGER,
+        allowNull:false
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull:false
+      },
+      status: {
+        type: Sequelize.ENUM,
+        allowNull:false,
+        defaultValue:'In Process',
+        values:['In Process','Booked','Cancelled']
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      noOfSeats:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        defaultValue:1
+      },
+      totalCost:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        defaultValue:0
+      }
+    });
+  },
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Bookings');
+  }
+};
